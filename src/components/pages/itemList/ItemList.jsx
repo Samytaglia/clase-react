@@ -1,9 +1,8 @@
 
-const ItemList = ({apellido, saludo}) => {
+const ItemList = () => {
   return (
     <div>
-        <h1>{apellido}</h1>
-        <h2>{saludo}</h2>
+       Productos
     </div>
   )
 }

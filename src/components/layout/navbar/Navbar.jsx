@@ -4,8 +4,7 @@ import "./Navbar.css";
 const Navbar = () => {
   return (
     <div className="navContainer">
-      <h4>ModeFemme</h4>
-
+       <a href="../../pages/home" className="pages"><img src="https://res.cloudinary.com/davctp85m/image/upload/v1687473002/logoMF_mm8kyw.png" alt="logo" width="80px"/></a>
       <ul className="containerPages">
         <li>
           <a href="../../pages/home" className="pages">Inicio</a>
