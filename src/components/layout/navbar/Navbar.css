@@ -1,0 +1,17 @@
+.navContainer{
+    width: 100%;
+    background-color: whitesmoke;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.containerPages{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+.pages{
+    color: gray;
+    text-decoration: none;
+}
