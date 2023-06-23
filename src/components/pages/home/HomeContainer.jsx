@@ -1,3 +1,4 @@
+import './Home.css';
 import Home from "./Home";
 
 const HomeContainer = () => {

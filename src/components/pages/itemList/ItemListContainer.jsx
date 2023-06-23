@@ -1,5 +1,4 @@
 import './ItemList.css';
-import './ItemList';
 
 const ItemListContainer = ({greeting}) => {
 
