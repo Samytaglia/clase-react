@@ -1,15 +1,31 @@
-import './Footer.css'
+import "./Footer.css";
 import { BsInstagram } from "react-icons//bs";
 import { BsTwitter } from "react-icons/bs";
 import { FaFacebookF } from "react-icons/fa";
+// import { Outlet } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <ul className="footerContainer">
-      <li><a href="" className="pages"><BsInstagram/></a></li>
-      <li><a href="" className="pages"><BsTwitter/></a></li>
-      <li><a href="" className="pages"><FaFacebookF/></a></li>
-    </ul>
+    <div>
+      {/* <Outlet /> */}
+      <ul className="footerContainer">
+        <li>
+          <a href="">
+            <BsInstagram />
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <BsTwitter />
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <FaFacebookF />
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 
