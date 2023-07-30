@@ -12,13 +12,19 @@ const ItemListContainer = () => {
     let filteredProducts = products.filter( element => element.category === categoryName)
 
     const catalogue = new Promise((resolve, reject) => {
-      resolve( categoryName ? filteredProducts : products );
+      setTimeout(()=>{
+        resolve( categoryName ? filteredProducts : products);
+      }, 1000);
     });
 
     catalogue.then((res) => setItems(res)).catch((err) => console.log(err));
   }, [categoryName]);
 
+  // if(items.length === 0){
+  //   return <h1>Cargando...</h1>
+  // }
   return <ItemList items={items} />;
+ 
 };
 
 export default ItemListContainer;

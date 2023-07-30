@@ -14,7 +14,7 @@ const ProductCard = ({ item }) => {
     <div className="cardContainer">
       <Card sx={{ Width: 345 }}>
         <CardMedia
-          sx={{ height: 500 }}
+          sx={{ height: 510 }}
           image={item.img}
           title="imagen prenda"
         />
@@ -23,7 +23,7 @@ const ProductCard = ({ item }) => {
             {item.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {item.description}
+            ${item.price}
           </Typography>
         </CardContent>
         <CardActions>
