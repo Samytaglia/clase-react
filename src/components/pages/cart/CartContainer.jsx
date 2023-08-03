@@ -39,7 +39,7 @@ const CartContainer = () => {
         flexDirection: "column",
         textAlign: "center",
         alignItems: "center",
-        marginTop: "2%"
+        marginTop: "2%",
       }}
     >
       {cart.length > 0 ? (
@@ -47,7 +47,7 @@ const CartContainer = () => {
           <h1>BOLSA DE COMPRA</h1>
           <table
             className="cart-table"
-            style={{ width: "70%", marginLeft: "15%", marginTop: "2%"}}
+            style={{ width: "70%", marginLeft: "15%", marginTop: "2%" }}
           >
             <thead>
               <tr>
@@ -115,7 +115,10 @@ const CartContainer = () => {
               Eliminar Bolsa de Compra
             </Button>
             <h2 style={{ textAlign: "center" }}>Total a pagar: ${total}</h2>
-            <Button variant="contained">Finalizar Compra</Button>
+            <Link to="/checkout">
+              <Button variant="contained">Finalizar Compra</Button>
+            </Link>
+
             <Link style={{ textAlign: "center" }} to="/">
               Seguir comprando
             </Link>
