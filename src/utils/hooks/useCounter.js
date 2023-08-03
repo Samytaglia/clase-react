@@ -1,14 +1,18 @@
 import { useState } from "react";
 
-const useCounter = (initial = 0, max) => {
-  const [counter, setCounter] = useState(initial);
+const useCounter = (stock, quantityInCart = 1) => {
+  const [counter, setCounter] = useState(quantityInCart);
 
   const sumar = () => {
-    counter < max && setCounter(counter + 1);
+    if (counter < stock) {
+      setCounter(counter + 1);
+    }
   };
 
   const restar = () => {
-    counter > 1 && setCounter(counter - 1);
+    if (counter > 1) {
+      setCounter(counter - 1);
+    }
   };
 
   return { counter, sumar, restar };

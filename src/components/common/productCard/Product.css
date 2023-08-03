@@ -1,4 +1,10 @@
-.cardContainer{
-    margin-bottom: 6%;
-    box-shadow: 0 2px 3px 4px rgba(0, 0, 0, 0.1);
+.cardContainer {
+  margin-bottom: 6%;
+  box-shadow: 0 2px 3px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cardContainer Button{
+    margin-left: 90px;
 }

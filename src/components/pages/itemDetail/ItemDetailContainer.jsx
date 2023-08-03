@@ -1,10 +1,11 @@
 import ItemDetail from "./ItemDetail";
 import { useContext, useEffect, useState } from "react";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { conn } from "../../../firebaseConfig";
+import { getDoc, collection, doc} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -14,12 +15,9 @@ const ItemDetailContainer = () => {
   let quantityInCart = quantityById(id);
 
   useEffect(() => {
-    let promise = new Promise((resolve) => {
-      let productSelected = products.find((product) => product.id === +id);
-      resolve(productSelected);
-    });
-
-    promise.then((res) => setProduct(res)).catch((err) => console.log(err));
+let refCollection = collection(conn, "products")
+let refDoc = doc(refCollection, id)
+getDoc(refDoc).then(res => setProduct({...res.data(), id: res.id}))
   }, [id]);
 
   const agregarAlCarrito = (cantidad) => {

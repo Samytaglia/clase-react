@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Product.css";
 import {
   Card,
@@ -10,12 +11,26 @@ import {
 import { Link } from "react-router-dom";
 
 const ProductCard = ({ item }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <div className="cardContainer">
+    <div
+      className="cardContainer"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Card sx={{ Width: 345 }}>
         <CardMedia
           sx={{ height: 510 }}
-          image={item.img}
+          image={isHovered ? item.img1 : item.img}
           title="imagen prenda"
         />
         <CardContent>
@@ -34,6 +49,7 @@ const ProductCard = ({ item }) => {
           </Link>
         </CardActions>
       </Card>
+     
     </div>
   );
 };

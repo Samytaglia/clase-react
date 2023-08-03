@@ -11,7 +11,7 @@ export const routes = [
     },
     {
         id: "category",
-        path:"/category/:categoryName" ,
+        path:"/category/:categoryName",
         Element: ItemListContainer,
     },
     {

@@ -26,7 +26,7 @@ const CartContextComponent = ({ children }) => {
     setCart(deletedCart);
   };
 
-  const clearcart = () => {
+  const clearCart = () => {
     setCart([]);
   };
 
@@ -53,7 +53,7 @@ const CartContextComponent = ({ children }) => {
     cart,
     addToCart,
     deleteFromCart,
-    clearcart,
+    clearCart,
     totalQuantities,
     totalPrice,
     quantityById

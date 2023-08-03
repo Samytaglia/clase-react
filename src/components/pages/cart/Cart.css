@@ -1,0 +1,10 @@
+cart-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .cart-table th {
+    border-bottom: 1px solid #00000054;
+  }
+  .cart-table td {
+    border-bottom: 1px solid #00000054;
+  }

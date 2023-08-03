@@ -48,11 +48,12 @@ const ItemList = ({ items }) => {
               }}
             >
               {group.map((index) => (
-                <div key={index} style={{ flex: '1', minWidth: '23%', marginRight: '20px' }}> {/* Adjusted minWidth to fit 4 skeletons in a row */}
-                  <Skeleton variant="rectangular" width={280} height={158} />
+                <div key={index} style={{ flex: '1', minWidth: '23%', marginRight: '20px' }}> 
+                  <Skeleton variant="rectangular" width={300} height={510} />
                   <div style={{ paddingRight: '8px' }}>
-                    <Skeleton />
-                    <Skeleton width="60%" />
+                    <Skeleton width="60%" height={40} style={{marginLeft:"20%"}}/>
+                    <Skeleton width="30%" style={{marginLeft:"35%"}}/>
+                    <Skeleton width="40%" height={45} style={{marginLeft:"30%"}}/>
                   </div>
                 </div>
               ))}

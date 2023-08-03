@@ -1,30 +1,34 @@
 import ItemList from "./ItemList";
 import "./ItemList.css";
 import { useState, useEffect } from "react";
-import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
+import { conn } from "../../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
-  const {categoryName} = useParams()
+  const { categoryName } = useParams();
 
   useEffect(() => {
-    let filteredProducts = products.filter( element => element.category === categoryName)
+    let consulta;
+    let productsCollection = collection(conn, "products");
 
-    const catalogue = new Promise((resolve, reject) => {
-      setTimeout(()=>{
-        resolve( categoryName ? filteredProducts : products);
-      }, 1000);
+    if (!categoryName) {
+      consulta = productsCollection
+    } else {
+      consulta = query(productsCollection, where("category", "==", categoryName))
+    }
+
+    getDocs(consulta).then((res) => {
+  //res.docs trae un arrego de documentos, menos el id; se mapea para conseguir el id
+      let arrProducts = res.docs.map((product) => {
+        return { ...product.data(), id: product.id };
+      });
+      setItems(arrProducts)
     });
-
-    catalogue.then((res) => setItems(res)).catch((err) => console.log(err));
   }, [categoryName]);
 
-  // if(items.length === 0){
-  //   return <h1>Cargando...</h1>
-  // }
   return <ItemList items={items} />;
- 
 };
 
 export default ItemListContainer;
