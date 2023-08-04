@@ -1,3 +1,4 @@
+import { useState } from "react";
 import CounterContainer from "../../common/counter/CounterContainer";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,8 +8,35 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Link } from "react-router-dom";
+
+const ProductPopup = ({ product }) => {
+  return (
+    <div style={{ position: "fixed", top: 0, right: 0, width: "300px" }}>
+      <button
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          cursor: "pointer",
+        }}
+        // onClick={onClose}
+      >
+        X
+      </button>
+      <img src={product.img} alt="" style={{ width: "100%" }} />
+      <h3 style={{ textTransform: "uppercase", fontWeight: "bold" }}>
+        {product.title}
+      </h3>
+      <Link to="/cart" style={{ textDecoration: "none" }}>
+        <button style={{ cursor: "pointer" }}>Ir a la bolsa de compra</button>
+      </Link>
+    </div>
+  );
+};
 
 const ItemDetail = ({ product, agregarAlCarrito }) => {
+  const [selectedProduct, setSelectedProduct] = useState(null); // Estado para almacenar el producto seleccionado
   const settings = {
     dots: true,
     infinite: true,
@@ -19,6 +47,11 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
     autoplaySpeed: 2200,
     centerMode: true,
     centerPadding: "0",
+  };
+
+  const handleAgregarAlCarrito = (quantity) => {
+    agregarAlCarrito(quantity);
+    setSelectedProduct(product); // Al hacer clic, actualiza el estado con el producto seleccionado
   };
 
   return (
@@ -66,12 +99,52 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
             <Typography>{product.more}</Typography>
           </AccordionDetails>
         </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>MÉTODOS DE PAGO</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              <ul>
+                <li>*Podes abonar con Ahora 3 y Ahora 6 sin interés.</li>
+                <li>
+                  *Podés realizar tu compra a través de todos los medios de pago
+                  habilitados en Mercado Pago.
+                </li>
+              </ul>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>MÉTODOS DE ENVÍO</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              <ul>
+                <li>*Pick up in Store.</li>
+                <li>*Envío express para CABA y GBA.</li>
+                <li>*Envío a domicilio estándar por Correo Andreani.</li>
+                <li>*Retiro en Sucursal Andreani.</li>
+              </ul>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
         <div style={{ marginTop: "5%" }}>
           <CounterContainer
             stock={product.stock}
-            agregarAlCarrito={agregarAlCarrito}
+            agregarAlCarrito={handleAgregarAlCarrito}
           />
         </div>
+        {selectedProduct && <ProductPopup product={selectedProduct} />}
       </div>
     </div>
   );

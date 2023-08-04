@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { conn } from "../../../firebaseConfig";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { addDoc, collection, serverTimestamp, updateDoc, doc } from "firebase/firestore";
 
 const CheckoutContainer = () => {
   const { cart, totalPrice } = useContext(CartContext);
@@ -26,6 +26,10 @@ const CheckoutContainer = () => {
 
     let orderCollection = collection(conn, "orders");
     addDoc(orderCollection, purchaseOrder).then(res=> setOrderId(res.id));
+  
+    cart.forEach((element) => {
+      updateDoc(doc(conn, "products", element.id), {stock: element.stock - element.quantity});
+    });
   };
 
   const handleChange = (event) => {

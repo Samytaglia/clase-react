@@ -1,7 +1,6 @@
 export const products = [
 
     {
-        id: 1,
         title: "Campera Braulia",
         price: 120000,
         stock: 8,
@@ -14,7 +13,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690753181/sabana_Z398NE_4_vjv1rv.jpg"
     },
     {
-        id: 2,
         title: "Tapado Becky",
         price: 170000,
         stock: 10,
@@ -27,7 +25,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690840762/Z372VI_5_psqwsc.jpg"
     },
     {
-        id: 3,
         title: "Campera Morgan",
         price: 98000,
         stock: 8,
@@ -40,7 +37,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690840873/Z393NE_6_o9dpjb.jpg"
     },
     {
-        id: 4,
         title: "Campera Clover",
         price: 118000,
         stock: 5,
@@ -53,7 +49,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690841063/Z390MF_5_b1jhdp.jpg"
     },
     {
-        id: 5,
         title: "Tapado Mewis",
         price: 165000,
         stock: 4,
@@ -66,7 +61,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690841374/Z380RJ_6_favk9a.jpg"
     },
     {
-        id: 6,
         title: "Tapado Knight",
         price: 175000,
         stock: 4,
@@ -80,7 +74,6 @@ export const products = [
        
     },
     {
-        id: 7,
         title: "Pantalón Evelyn",
         price: 58000,
         stock: 10,
@@ -93,7 +86,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690847249/Z108NE_4_j747uc.jpg"
     },
     {
-        id: 8,
         title: "Pantalón Taylor",
         price: 46800,
         stock: 7,
@@ -106,7 +98,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690847345/Z103BG_4_cnnjwd.jpg"
     },
     {
-        id: 9,
         title: "Pantalón Rolfo",
         price: 58000,
         stock: 10,
@@ -119,7 +110,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690847424/Z123AZ_4_vmguer.jpg"
     },
     {
-        id: 10,
         title: "Leggings Donk",
         price: 46200,
         stock: 18,
@@ -132,7 +122,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690847562/Z195VV_6_ogffaf.jpg"
     },
     {
-        id: 11,
         title: "Pantalón Bronze",
         price: 44600,
         stock: 9,
@@ -145,7 +134,6 @@ export const products = [
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690847635/Z105NE_5_rh2raq.jpg"
     },
     {
-        id: 12,
         title: "Pantalón Bente",
         price: 44600,
         stock: 9,
