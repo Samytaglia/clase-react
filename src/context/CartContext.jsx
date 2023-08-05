@@ -3,7 +3,9 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 const CartContextComponent = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || 
+  []);
 
   const addToCart = (product) => {
     let inCart = cart.some((element) => element.id === product.id);
@@ -15,18 +17,23 @@ const CartContextComponent = ({ children }) => {
             return element
           }
       });
+
+      localStorage.setItem("cart", JSON.stringify(addQuantity))
       setCart(addQuantity);
     } else {
+      localStorage.setItem("cart", JSON.stringify([...cart, product]) )
       setCart([...cart, product]);
     }
   };
 
   const deleteFromCart = (id) => {
     let deletedCart = cart.filter((element) => element.id !== id);
+    localStorage.setItem("cart", JSON.stringify(deletedCart))
     setCart(deletedCart);
   };
 
   const clearCart = () => {
+    localStorage.removeItem("cart")
     setCart([]);
   };
 

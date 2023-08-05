@@ -93,7 +93,7 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>DETALLES DEL PRODUCTO</Typography>
+            <Typography component="div">DETALLES DEL PRODUCTO</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>{product.more}</Typography>
@@ -105,19 +105,19 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>MÉTODOS DE PAGO</Typography>
+            <Typography component="div">MÉTODOS DE PAGO</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
-              <ul>
-                <li>*Podes abonar con Ahora 3 y Ahora 6 sin interés.</li>
-                <li>
-                  *Podés realizar tu compra a través de todos los medios de pago
-                  habilitados en Mercado Pago.
-                </li>
-              </ul>
-            </Typography>
-          </AccordionDetails>
+  <Typography component="div">
+    <ul>
+      <li>*Podes abonar con Ahora 3 y Ahora 6 sin interés.</li>
+      <li>
+        *Podés realizar tu compra a través de todos los medios de pago
+        habilitados en Mercado Pago.
+      </li>
+    </ul>
+  </Typography>
+</AccordionDetails>
         </Accordion>
         <Accordion>
           <AccordionSummary
@@ -125,10 +125,10 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography>MÉTODOS DE ENVÍO</Typography>
+            <Typography component="div">MÉTODOS DE ENVÍO</Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <Typography>
+            <Typography component="div">
               <ul>
                 <li>*Pick up in Store.</li>
                 <li>*Envío express para CABA y GBA.</li>
