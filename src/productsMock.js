@@ -44,7 +44,7 @@ export const products = [
         more: "Campera corta de cuero vegano elastizado matelaseado premium, de silueta relajada, manga larga. Posee capucha y cuello alto. Su ruedo es ajustable por lo que permite regular el calce y no deja pasar el frío. Su interior está forrado en satén elastizado al tono. Este ítem de pura tendencia es ideal para tus looks urbanos de invierno.",
         category: "abrigos",
         img: "https://res.cloudinary.com/davctp85m/image/upload/v1690734274/Z390MF_1_qrxkar.jpg",
-        img1: "https://res.cloudinary.com/davctp85m/image/upload/v1690748164/Z390MF_2_qzhn9r.jpg",
+        img1: "https://res.cloudinary.com/davctp85m/image/upload/v1691282371/Z390MF_2_b2om6l.jpg",
         img2: "https://res.cloudinary.com/davctp85m/image/upload/v1690841040/Z390MF_4_zqjy52.jpg",
         img3: "https://res.cloudinary.com/davctp85m/image/upload/v1690841063/Z390MF_5_b1jhdp.jpg"
     },
