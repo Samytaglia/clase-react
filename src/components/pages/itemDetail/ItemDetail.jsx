@@ -1,4 +1,5 @@
 import CounterContainer from "../../common/counter/CounterContainer";
+import "./ItemDetail.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -26,38 +27,30 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
   };
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: "1%",
-      }}
-    >
-      <div style={{ width: "50%", maxWidth: "300px" }}>
+    <div className="detailContainer">
+      <div className="slider">
         {" "}
         <Slider {...settings}>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={product.img} alt="" style={{ width: "100%" }} />{" "}
+          <div className="sliderContainer">
+            <img src={product.img} alt="imagen1" />{" "}
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={product.img1} alt="" style={{ width: "100%" }} />{" "}
+          <div className="sliderContainer">
+            <img src={product.img1} alt="imagen2" />{" "}
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={product.img2} alt="" style={{ width: "100%" }} />{" "}
+          <div className="sliderContainer">
+            <img src={product.img2} alt="imagen3" />{" "}
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <img src={product.img3} alt="" style={{ width: "100%" }} />{" "}
+          <div className="sliderContainer">
+            <img src={product.img3} alt="imagen4" />{" "}
           </div>
         </Slider>
       </div>
       <div style={{ width: "50%", maxWidth: "400px", marginLeft: "150px" }}>
         {" "}
-        <h2 style={{ textTransform: "uppercase", fontWeight: "bold" }}>
+        <h2>
           {product.title}
         </h2>
-        <h3 style={{ fontSize: "1.1rem" }}>${product.price}</h3>
+        <h3>${product.price}</h3>
         <Accordion>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
@@ -109,7 +102,7 @@ const ItemDetail = ({ product, agregarAlCarrito }) => {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <div style={{ marginTop: "5%" }}>
+        <div className="counter" style={{ marginTop: "5%" }}>
           <CounterContainer
             stock={product.stock}
             agregarAlCarrito={handleAgregarAlCarrito}

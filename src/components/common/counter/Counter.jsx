@@ -1,7 +1,9 @@
 import { Button, styled } from "@mui/material";
+import "./Counter.css";
 
 const Counter = ({ counter, agregarAlCarrito, stock, sumar, restar }) => {
   const isOutOfStock = counter >= stock;
+  const inputClassName = isOutOfStock ? "inputOutOfStock" : "";
 
   const StyledButton = styled(Button)({
     color: "white",
@@ -12,7 +14,7 @@ const Counter = ({ counter, agregarAlCarrito, stock, sumar, restar }) => {
       color: "black",
     },
   });
-  
+
   return (
     <div>
       <div style={{ display: "flex" }}>
@@ -20,21 +22,27 @@ const Counter = ({ counter, agregarAlCarrito, stock, sumar, restar }) => {
           disabled={counter <= 1}
           variant="outlined"
           onClick={restar}
-          style={{ minWidth: "30px", color: "gray" }} 
+          style={{ minWidth: "30px", color: "gray" }}
         >
           -
         </Button>
         <input
           type="text"
-          style={{ width: "30px", textAlign: "center", color: "black", borderColor: "white"}}
-          value={isOutOfStock ? "SIN STOCK" : counter} 
+          className={inputClassName}
+          style={{
+            width: "35px",
+            textAlign: "center",
+            color: "black",
+            borderColor: "white",
+          }}
+          value={isOutOfStock ? "SIN STOCK" : counter}
           readOnly
         />
         <Button
           disabled={isOutOfStock}
           variant="outlined"
           onClick={sumar}
-          style={{ minWidth: "30px", borderColor: "gray", color: "black" }} 
+          style={{ minWidth: "30px", borderColor: "gray", color: "black" }}
         >
           +
         </Button>
@@ -44,6 +52,7 @@ const Counter = ({ counter, agregarAlCarrito, stock, sumar, restar }) => {
         color="inherit"
         onClick={() => agregarAlCarrito(counter)}
         disabled={isOutOfStock}
+        style={{ marginLeft: "-13%", marginTop: "2%" }}
       >
         Agregar a la bolsa
       </StyledButton>

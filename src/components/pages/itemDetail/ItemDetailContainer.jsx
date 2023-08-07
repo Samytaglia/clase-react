@@ -5,7 +5,7 @@ import { CartContext } from "../../../context/CartContext";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { conn } from "../../../firebaseConfig";
-import { getDoc, collection, doc} from "firebase/firestore";
+import { getDoc, collection, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
@@ -15,9 +15,9 @@ const ItemDetailContainer = () => {
   let quantityInCart = quantityById(id);
 
   useEffect(() => {
-let refCollection = collection(conn, "products")
-let refDoc = doc(refCollection, id)
-getDoc(refDoc).then(res => setProduct({...res.data(), id: res.id}))
+    let refCollection = collection(conn, "products");
+    let refDoc = doc(refCollection, id);
+    getDoc(refDoc).then((res) => setProduct({ ...res.data(), id: res.id }));
   }, [id]);
 
   const agregarAlCarrito = (cantidad) => {
@@ -28,7 +28,7 @@ getDoc(refDoc).then(res => setProduct({...res.data(), id: res.id}))
     addToCart(data);
     toast.success("¡Producto agregado!", {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

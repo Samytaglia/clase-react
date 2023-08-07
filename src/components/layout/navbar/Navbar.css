@@ -1,27 +1,20 @@
-.navContainer{
-    width: 100%;
-    background-color: whitesmoke;
-    height: 15vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-size: 1rem;
+.navContainer {
+  width: 100%;
+  background-color: whitesmoke;
+  height: 15vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1rem;
 }
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+  color: black;
 }
-.containerPages{
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-.pages{
-    color: gray;
-    text-decoration: none;
-}
-.pages:hover{
-    color: rgba(202, 126, 26, 0.767);
+a:hover{
+   text-decoration:underline;
+   font-weight: bold;
 }

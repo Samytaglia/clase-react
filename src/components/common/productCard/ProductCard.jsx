@@ -49,7 +49,6 @@ const ProductCard = ({ item }) => {
           </Link>
         </CardActions>
       </Card>
-     
     </div>
   );
 };

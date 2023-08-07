@@ -1,16 +1,19 @@
-.footerContainer{
-    width: 100%;
-    background-color: whitesmoke;
-    height: 7vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    gap: 30px;
-    position: absolute;
-    position: fixed;
-    bottom: 0;
+.footerContainer {
+  width: 100%;
+  background-color: whitesmoke;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 30px;
+  position: absolute;
+  position: fixed;
+  bottom: 0;
 }
-.pages{
-    color: black;
+.footerContainer a {
+  color: black;
+}
+.footerContainer a:hover {
+  color: gray;
 }

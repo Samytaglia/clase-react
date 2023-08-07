@@ -1,6 +1,6 @@
 import "./Cart.css";
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Button, styled } from "@mui/material";
 import WorkOffIcon from "@mui/icons-material/WorkOff";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
@@ -10,6 +10,16 @@ import DeleteIcon from "@mui/icons-material/Delete";
 const CartContainer = () => {
   const { cart, clearCart, deleteFromCart, totalPrice } =
     useContext(CartContext);
+
+  const StyledButton = styled(Button)({
+    color: "white",
+    backgroundColor: "black",
+    borderColor: "black",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "black",
+    },
+  });
 
   let clear = () => {
     Swal.fire({
@@ -24,7 +34,7 @@ const CartContainer = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         clearCart();
-        Swal.fire("<Productos eliminados>!", "Tu bolsa está vacía.", "success");
+        Swal.fire("¡Productos eliminados!", "Tu bolsa está vacía.", "success");
       }
     });
   };
@@ -32,15 +42,7 @@ const CartContainer = () => {
   let total = totalPrice();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-        alignItems: "center",
-        marginTop: "2%",
-      }}
-    >
+    <div className="cartContainer">
       {cart.length > 0 ? (
         <div>
           <h1>BOLSA DE COMPRA</h1>
@@ -50,9 +52,7 @@ const CartContainer = () => {
           >
             <thead>
               <tr>
-                <th style={{ textAlign: "left", padding: "5px 10px" }}>
-                  ARTÍCULO
-                </th>
+                <th>ARTÍCULO</th>
                 <th style={{ padding: "5px 10px" }}>CANTIDAD</th>
                 <th style={{ padding: "5px 10px" }}>PRECIO</th>
                 <th style={{ padding: "5px 10px" }}>BORRAR</th>
@@ -71,14 +71,7 @@ const CartContainer = () => {
                     >
                       <img src={element.img} alt="" style={{ width: "10%" }} />
                       <div style={{ marginLeft: "10px" }}>
-                        <h3
-                          style={{
-                            textTransform: "uppercase",
-                            fontWeight: "bold",
-                          }}
-                        >
-                          {element.title}
-                        </h3>
+                        <h3 style={{}}>{element.title}</h3>
                         <p>{element.description}</p>
                       </div>
                     </div>
@@ -97,39 +90,28 @@ const CartContainer = () => {
               ))}
             </tbody>
           </table>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "20%",
-              marginLeft: "40%",
-              marginTop: "2%",
-            }}
-          >
-            <Button variant="contained" onClick={clear}>
-              Eliminar Bolsa de Compra
-            </Button>
+
+          <div className="buttonsContainer" style={{}}>
             <h2 style={{ textAlign: "center" }}>Total a pagar: ${total}</h2>
             <Link to="/checkout">
-              <Button variant="contained">Finalizar Compra</Button>
+              <StyledButton variant="outlined" color="inherit">
+                Finalizar Compra
+              </StyledButton>
             </Link>
 
             <Link style={{ textAlign: "center" }} to="/">
               Seguir comprando
             </Link>
+            <div className="clearButton">
+              {" "}
+              <StyledButton variant="outlined" color="inherit" onClick={clear}>
+                Eliminar Bolsa de Compra
+              </StyledButton>
+            </div>
           </div>
         </div>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            textAlign: "center",
-            alignItems: "center",
-            gap: "20px",
-            marginTop: "1%",
-          }}
-        >
+        <div className="emptyCart">
           <img
             src="https://res.cloudinary.com/davctp85m/image/upload/v1691020079/logoMF-removebg-preview_wi2fms.png"
             alt="logo"

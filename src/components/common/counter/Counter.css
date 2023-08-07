@@ -1,0 +1,13 @@
+.inputOutOfStock {
+  width: 100px !important;
+}
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-left: 40%;
+  margin-top: 2%;
+}
+.clearButton {
+  margin-top: 20%;
+}
