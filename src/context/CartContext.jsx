@@ -4,7 +4,7 @@ export const CartContext = createContext();
 
 const CartContextComponent = ({ children }) => {
   const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart")) || 
+    // JSON.parse(localStorage.getItem("cart")) || 
   []);
 
   const addToCart = (product) => {
@@ -18,17 +18,17 @@ const CartContextComponent = ({ children }) => {
           }
       });
 
-      localStorage.setItem("cart", JSON.stringify(addQuantity))
+      // localStorage.setItem("cart", JSON.stringify(addQuantity))
       setCart(addQuantity);
     } else {
-      localStorage.setItem("cart", JSON.stringify([...cart, product]) )
+      // localStorage.setItem("cart", JSON.stringify([...cart, product]) )
       setCart([...cart, product]);
     }
   };
 
   const deleteFromCart = (id) => {
     let deletedCart = cart.filter((element) => element.id !== id);
-    localStorage.setItem("cart", JSON.stringify(deletedCart))
+    // localStorage.setItem("cart", JSON.stringify(deletedCart))
     setCart(deletedCart);
   };
 
