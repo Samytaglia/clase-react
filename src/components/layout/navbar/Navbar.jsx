@@ -26,7 +26,7 @@ const Navbar = () => {
         </li>
         <CartWidget />
       </ul>
-      {userRol === "admin" && <Link to="/dashboard">Admin</Link>}
+      {userRol === "customer" && <Link to="/dashboard">Admin</Link>}
     </div>
   );
 };

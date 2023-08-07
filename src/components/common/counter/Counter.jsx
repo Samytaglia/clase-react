@@ -28,6 +28,7 @@ const Counter = ({ counter, agregarAlCarrito, stock, sumar, restar }) => {
           type="text"
           style={{ width: "30px", textAlign: "center", color: "black", borderColor: "white"}}
           value={isOutOfStock ? "SIN STOCK" : counter} 
+          readOnly
         />
         <Button
           disabled={isOutOfStock}

@@ -6,7 +6,6 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import Swal from "sweetalert2";
 import DeleteIcon from "@mui/icons-material/Delete";
-import CounterContainer from "../../common/counter/CounterContainer";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteFromCart, totalPrice } =
@@ -84,11 +83,7 @@ const CartContainer = () => {
                       </div>
                     </div>
                   </td>
-                  <td>
-                    {" "}
-                    <CounterContainer stock={element.stock} />
-                  </td>
-                  {/* <td style={{ textAlign: "center" }}>{element.quantity}</td> */}
+                  <td style={{ textAlign: "center" }}>{element.quantity}</td>
                   <td>${element.price}</td>
                   <td style={{ textAlign: "center" }}>
                     <DeleteIcon
