@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./menuRoutes";
 import Layout from "../components/layout/Layout";
-import ProtectedRoutes from "./protectedRoutes";
 import Dashboard from "../components/pages/dashboard/Dashboard";
+import ProtectedRoutes from "./ProtectedRoutes";
 
 const AppRouter = () => {
   return (
