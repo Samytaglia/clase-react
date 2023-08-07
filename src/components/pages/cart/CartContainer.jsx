@@ -120,7 +120,10 @@ const CartContainer = () => {
           <h2>Aún no hay productos en tu Bolsa de Compra</h2>
           <WorkOffIcon fontSize="large" />
           <Link to="/">
-            <Button variant="contained"> Descubrir Productos</Button>
+            <StyledButton variant="outlined" color="inherit">
+              {" "}
+              Descubrir Productos
+            </StyledButton>
           </Link>
         </div>
       )}

@@ -29,10 +29,4 @@ export const routes = [
         path:"/checkout" ,
         Element: CheckoutContainer,
     }
-    // ,
-    // {
-    //     id: "404",
-    //     path:"*" ,
-    //     Element: ItemDetailContainer,
-    // }
 ];

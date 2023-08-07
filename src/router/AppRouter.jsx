@@ -3,6 +3,7 @@ import { routes } from "./menuRoutes";
 import Layout from "../components/layout/Layout";
 import Dashboard from "../components/pages/dashboard/Dashboard";
 import ProtectedRoutes from "./ProtectedRoutes";
+import NotFound from "../components/pages/notFound/NotFound"; 
 
 const AppRouter = () => {
   return (
@@ -13,9 +14,10 @@ const AppRouter = () => {
         ))}
       </Route>
       <Route element={<ProtectedRoutes />}>
-        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/dashboard" element={<Dashboard />} />
       </Route>
-      <Route path="*" element={<h1>Not found</h1>} />
+      {/* Agrega la ruta para NotFound */}
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

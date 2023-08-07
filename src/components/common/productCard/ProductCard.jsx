@@ -7,6 +7,7 @@ import {
   Typography,
   CardActions,
   Button,
+  styled,
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
@@ -21,6 +22,15 @@ const ProductCard = ({ item }) => {
     setIsHovered(false);
   };
 
+  const StyledButton = styled(Button)({
+    color: "white",
+    backgroundColor: "black",
+    borderColor: "black",
+    "&:hover": {
+      backgroundColor: "white",
+      color: "black",
+    },
+  });
   return (
     <div
       className="cardContainer"
@@ -43,9 +53,9 @@ const ProductCard = ({ item }) => {
         </CardContent>
         <CardActions>
           <Link to={`/detail/${item.id}`}>
-            <Button size="small" variant="contained">
+            <StyledButton variant="outlined" color="inherit">
               Ver Detalle
-            </Button>
+            </StyledButton>
           </Link>
         </CardActions>
       </Card>
